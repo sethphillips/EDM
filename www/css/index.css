@@ -1,0 +1,290 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+.hidden{
+    display:none;
+}
+
+.gradient{
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 65%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(15%,rgba(255,255,255,1)), color-stop(65%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,0) 65%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,0) 65%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,0) 65%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,0) 65%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    overflow: hidden;
+    
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:white;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background:url(../img/bg.png) center;
+    background-size: cover;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow:hidden;
+    font-size:14px;
+}
+
+/* Portrait layout (default) */
+.app {  
+    position:absolute;            
+    height:100%;                  
+    width:100%;                   
+    text-align:center;
+    padding:0;    
+    margin:0;                                  
+}
+
+#nav-footer{
+    position: absolute;
+    bottom:0;
+    z-index: 100;
+    width:100%;
+    background-color: white;
+    text-align: center;
+    padding:3em 0;
+    height:15em;
+    border-top:1px solid #616161;
+}
+
+#nav-footer .glyphicon{
+    font-size: 5em;
+    margin-bottom: .2em;
+    color:#616161;
+}
+
+.nav-button{
+    display:inline-block;
+    width:24%;
+    vertical-align: text-top;
+    line-height: 2em;
+}
+
+.nav-button .caption{
+    font-size: 1.7em;
+}
+
+.logo-bar{
+    height:10em;
+    background-color:white;
+    padding-top:1.5em;
+}
+.logo-bar img{
+    width:60%;
+}
+
+#gallery{
+    background:white;
+}
+
+.product-button{
+    display: inline-block;
+    width:32%;
+    padding:.2em 1em;
+    margin:1em 0;
+
+}
+
+.product-button img{
+    width:100%;
+}
+
+.product-button .caption{
+    background-color:#0069aa;
+    color:white;
+    font-size: 1.7em;
+    padding:.1em 0;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+
+.image-container{
+    position: relative;
+    overflow: hidden;
+    height: 76%
+}
+.photo{
+   
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    -webkit-transition: left 400ms;
+    -o-transition: left 400ms;
+    transition: left 400ms;
+}
+
+#pictures .caption{
+    background-color:#0069aa;
+    color:white;
+    font-size: 2em;
+    line-height: 1.7em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+
+.left{
+    left:-100%;
+}
+.center{
+    left:0px;
+}
+.right{
+    left:100%;
+}
+
+#i-1{
+     background-image:url(../img/pictures/1.jpg);
+}
+#i-2{
+     background-image:url(../img/pictures/2.jpg);
+}   
+#i-3{
+     background-image:url(../img/pictures/3.jpg);
+     z-index: 2;
+}
+
+.nav-arrow{
+    position: absolute;
+    top:40%;
+    z-index: 10;
+    font-size:6em;
+    color:black;
+    text-shadow: 3px 2px 1px #999999;
+}
+#left{
+    left:.1em;
+}
+#right{
+    right:.1em;
+}
+
+
+
+
+#videos{
+    background-color: white;
+    height: 100%;
+}
+
+#videos video{
+    width:100%;
+    margin-top:8em;
+}
+
+
+
+#specs{
+    background-color: #fff;
+    height:100%;
+    overflow: hidden;
+    font-size: 1.6em;
+}
+.spec-container{
+    height:90%;
+    overflow-y: auto;
+    padding:2em 2em 10em 2em;
+}
+
+.spec-container p{
+    text-align: left;
+
+}
+.spec-container h2{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.spec-container h3{
+    text-decoration: underline;
+    text-align: left;
+    font-size: 1.2em;
+    margin-top:3em;
+}
+.spec-container table{
+    font-size: .7em
+}
+
+td{
+    text-align: left;
+    padding:0 .6em;
+}
+
+ol li{
+    text-align: left;
+    font-size:.9em;
+}
+
+
+
+
+@media screen and (max-width:600px) {
+    body{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    body{
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+
+
