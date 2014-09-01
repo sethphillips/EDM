@@ -67,19 +67,18 @@ var products = {
         title:'CT400 3A Five Axis CNC EDM Hole Drilling Machine',
         images:[
             'img/pictures/CT400/1.jpg',
-            'img/pictures/CT400/2.jpg',
             'img/pictures/CT400/3.jpg',
             'img/pictures/CT400/4.jpg',
             'img/pictures/CT400/5.jpg',
             'img/pictures/CT400/6.jpg',
-            'img/pictures/CT400/7.jpg',
-            'img/pictures/CT400/8.jpg',
-            'img/pictures/CT400/9.jpg',
-            'img/pictures/CT400/10.jpg',
-            'img/pictures/CT400/11.jpg',
-            'img/pictures/CT400/12.jpg',
-            'img/pictures/CT400/13.jpg',
-            'img/pictures/CT400/14.jpg'
+
+            'img/pictures/Shared/2.jpg',
+            'img/pictures/Shared/3.jpg',
+            'img/pictures/Shared/4.jpg',
+            'img/pictures/Shared/5.jpg',
+            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/9.jpg'
         ]
     },
     CT4005A:{
@@ -87,19 +86,18 @@ var products = {
         title:'CT400 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
             'img/pictures/CT400/1.jpg',
-            'img/pictures/CT400/2.jpg',
             'img/pictures/CT400/3.jpg',
             'img/pictures/CT400/4.jpg',
             'img/pictures/CT400/5.jpg',
             'img/pictures/CT400/6.jpg',
-            'img/pictures/CT400/7.jpg',
-            'img/pictures/CT400/8.jpg',
-            'img/pictures/CT400/9.jpg',
-            'img/pictures/CT400/10.jpg',
-            'img/pictures/CT400/11.jpg',
-            'img/pictures/CT400/12.jpg',
-            'img/pictures/CT400/13.jpg',
-            'img/pictures/CT400/14.jpg'
+
+            'img/pictures/Shared/2.jpg',
+            'img/pictures/Shared/3.jpg',
+            'img/pictures/Shared/4.jpg',
+            'img/pictures/Shared/5.jpg',
+            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/9.jpg'
         ]
     },
     CT5005A:{
@@ -108,33 +106,31 @@ var products = {
         images:[
             'img/pictures/CT500/1.jpg',
             'img/pictures/CT500/2.jpg',
-            'img/pictures/CT500/3.jpg',
             'img/pictures/CT500/4.jpg',
             'img/pictures/CT500/5.jpg',
-            'img/pictures/CT500/6.jpg',
-            'img/pictures/CT500/7.jpg',
-            'img/pictures/CT500/8.jpg',
-            'img/pictures/CT500/9.jpg',
-            'img/pictures/CT500/10.jpg',
-            'img/pictures/CT500/11.jpg',
-            'img/pictures/CT500/12.jpg',
-            'img/pictures/CT500/13.jpg'
+
+            'img/pictures/Shared/2.jpg',
+            'img/pictures/Shared/3.jpg',
+            'img/pictures/Shared/4.jpg',
+            'img/pictures/Shared/5.jpg',
+            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/9.jpg'
         ]
     },
     RT60505A:{
         photo:'img/RT60505A.jpg',
         title:'RT6050 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
-            'img/pictures/RT6050/1.jpg',
-            'img/pictures/RT6050/2.jpg',
-            'img/pictures/RT6050/3.jpg',
-            'img/pictures/RT6050/4.jpg',
-            'img/pictures/RT6050/5.jpg',
-            'img/pictures/RT6050/6.jpg',
-            'img/pictures/RT6050/7.jpg',
-            'img/pictures/RT6050/8.jpg',
-            'img/pictures/RT6050/9.jpg',
-            'img/pictures/RT6050/10.jpg'
+            'img/pictures/RT6050/10.jpg',
+
+            'img/pictures/Shared/2.jpg',
+            'img/pictures/Shared/3.jpg',
+            'img/pictures/Shared/4.jpg',
+            'img/pictures/Shared/5.jpg',
+            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/9.jpg'
         ]
     },
     Robot:{
@@ -143,8 +139,15 @@ var products = {
         images:[
             'img/pictures/Robot/1.jpg',
             'img/pictures/Robot/2.jpg',
-            'img/pictures/Robot/3.jpg',
-            'img/pictures/Robot/4.jpg'
+
+            'img/pictures/Shared/2.jpg',
+            'img/pictures/Shared/3.jpg',
+            'img/pictures/Shared/4.jpg',
+            'img/pictures/Shared/5.jpg',
+            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/9.jpg'
+        ]
         ]
     },
 };
