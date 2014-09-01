@@ -154,6 +154,16 @@ var products = {
     },
 };
 
+var IP = [];
+var x = 0;
+$.each(products, function(k,v){
+    $.each(v.images,function(k,i){
+        IP[x] = new Image();
+        IP[x].src = i;
+        x++;
+    });
+});
+
 
 var sleeping = false;
 

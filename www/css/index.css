@@ -223,13 +223,16 @@ body {
 .left{
     
     -webkit-transform:translate3d(-100%,0,0);
+    transform:translate3d(-100%,0,0);
 }
 .center{
     
     -webkit-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
 }
 .right{
     -webkit-transform:translate3d(100%,0,0);
+    transform:translate3d(100%,0,0);
 }
 
 #i-1{
