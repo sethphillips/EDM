@@ -157,7 +157,9 @@ var products = {
 
 var sleeping = false;
 
-var timer = 60000;
+var timer = 10000;
+
+var sleepTimer;
 
 var i = [];
 
@@ -165,9 +167,9 @@ var currentImage = 1;
 
 
 function pictureSwipe(e){
-    console.log(e.type);
+
     var dir = (e.type === 'swipeleft')?'left':'right';
-    console.log(dir);
+
     changePicture(dir);
 }
 
@@ -204,8 +206,8 @@ function changePicture(dir){
     var leftImage = currentImage === 0 ? i.length-1 : currentImage-1;
     var rightImage = currentImage === i.length-1 ? 0 : currentImage+1;
 
-    $('.left').delay(500).css({'background-image':'url('+i[leftImage]+')'});
-    $('.right').delay(500).css({'background-image':'url('+i[rightImage]+')'});
+    $('.left').delay(1000).css({'background-image':'url('+i[leftImage]+')'});
+    $('.right').delay(1000).css({'background-image':'url('+i[rightImage]+')'});
     
 
 }
@@ -239,9 +241,11 @@ function productNav(){
     var product = $(this).attr('data-target');
 
     if(sessionStorage){
-        if(! sessionStorage.productType) sessionStorage.productType = product;
-        $('#sleep-title').text(products[product].title);
-        window.sleep = setTimeout(startSleep,timer);
+        if(! sessionStorage.productType){
+            sessionStorage.productType = product;
+            $('#sleep-title').text(products[product].title);
+            sleepTimer = setInterval(startSleep,timer);    
+        } 
     }
 
     setProductType(product);
@@ -281,9 +285,11 @@ function sleepCheck(e){
 
     if(sleeping){
 
+        console.log('wakeup');
+
         sleeping = false;
 
-        window.sleep = setTimeout(startSleep,timer);
+        sleepTimer = setInterval(startSleep,timer);
         
         setProductType(sessionStorage.productType);
 
@@ -292,17 +298,24 @@ function sleepCheck(e){
         $('#landing-page').removeClass('hidden');
     }
     else{
-        if(window.sleep){
+        if(sleepTimer){
 
-            clearTimeout(window.sleep);
+            console.log('resetSleep');
+
+            clearInterval(sleepTimer);
             
-            window.sleep = setTimeout(startSleep,timer);
+            sleepTimer = setInterval(startSleep,timer);
         }
     }
 }
 
 function startSleep(){
-    sleeping = true;
+       
+    console.log('startSleep');
+    
+    clearInterval(sleepTimer);
+    
+    $('#sleep').removeClass('hidden');
 
-     $('#sleep').removeClass('hidden');
+    sleeping = true;
 }
