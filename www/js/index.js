@@ -46,43 +46,115 @@ $(document).ready(function(){
 });
 
 function deviceReady(){
-    $('.nav-arrow').on('click',pictureNav);
+    $('.nav-arrow').on('touchstart',pictureNav);
 
     Hammer(document.getElementById('i-1')).on('swiperight swipeleft',pictureSwipe);
     Hammer(document.getElementById('i-2')).on('swiperight swipeleft',pictureSwipe);
     Hammer(document.getElementById('i-3')).on('swiperight swipeleft',pictureSwipe);
 
-    $('.nav-button').on('click',function(){
-        
+    $('.nav-button').on('touchstart',mainNav);
 
-        var t = $(this).attr('data-target');
+    $('.product-button').on('touchstart',productNav);
 
-        if(t !== '#videos'){ 
-            $('#video').get(0).pause();
-            $('#video').get(0).currentTime = 0;
-        }
-
-        $('.app').addClass('hidden');
-
-        $(t).removeClass('hidden');
-
-    });
+    $('body').on('touchstart',sleepCheck);
 
 }
     
 
+var products = {
+    CT4003A:{
+        photo:'img/CT4003A.jpg',
+        title:'CT400 3A Five Axis CNC EDM Hole Drilling Machine',
+        images:[
+            'img/pictures/CT400/1.jpg',
+            'img/pictures/CT400/2.jpg',
+            'img/pictures/CT400/3.jpg',
+            'img/pictures/CT400/4.jpg',
+            'img/pictures/CT400/5.jpg',
+            'img/pictures/CT400/6.jpg',
+            'img/pictures/CT400/7.jpg',
+            'img/pictures/CT400/8.jpg',
+            'img/pictures/CT400/9.jpg',
+            'img/pictures/CT400/10.jpg',
+            'img/pictures/CT400/11.jpg',
+            'img/pictures/CT400/12.jpg',
+            'img/pictures/CT400/13.jpg',
+            'img/pictures/CT400/14.jpg'
+        ]
+    },
+    CT4005A:{
+        photo:'img/CT4005A.jpg',
+        title:'CT400 5A Five Axis CNC EDM Hole Drilling Machine',
+        images:[
+            'img/pictures/CT400/1.jpg',
+            'img/pictures/CT400/2.jpg',
+            'img/pictures/CT400/3.jpg',
+            'img/pictures/CT400/4.jpg',
+            'img/pictures/CT400/5.jpg',
+            'img/pictures/CT400/6.jpg',
+            'img/pictures/CT400/7.jpg',
+            'img/pictures/CT400/8.jpg',
+            'img/pictures/CT400/9.jpg',
+            'img/pictures/CT400/10.jpg',
+            'img/pictures/CT400/11.jpg',
+            'img/pictures/CT400/12.jpg',
+            'img/pictures/CT400/13.jpg',
+            'img/pictures/CT400/14.jpg'
+        ]
+    },
+    CT5005A:{
+        photo:'img/CT5005A.jpg',
+        title:'CT500 5A Five Axis CNC EDM Hole Drilling Machine',
+        images:[
+            'img/pictures/CT500/1.jpg',
+            'img/pictures/CT500/2.jpg',
+            'img/pictures/CT500/3.jpg',
+            'img/pictures/CT500/4.jpg',
+            'img/pictures/CT500/5.jpg',
+            'img/pictures/CT500/6.jpg',
+            'img/pictures/CT500/7.jpg',
+            'img/pictures/CT500/8.jpg',
+            'img/pictures/CT500/9.jpg',
+            'img/pictures/CT500/10.jpg',
+            'img/pictures/CT500/11.jpg',
+            'img/pictures/CT500/12.jpg',
+            'img/pictures/CT500/13.jpg'
+        ]
+    },
+    RT60505A:{
+        photo:'img/RT60505A.jpg',
+        title:'RT6050 5A Five Axis CNC EDM Hole Drilling Machine',
+        images:[
+            'img/pictures/RT6050/1.jpg',
+            'img/pictures/RT6050/2.jpg',
+            'img/pictures/RT6050/3.jpg',
+            'img/pictures/RT6050/4.jpg',
+            'img/pictures/RT6050/5.jpg',
+            'img/pictures/RT6050/6.jpg',
+            'img/pictures/RT6050/7.jpg',
+            'img/pictures/RT6050/8.jpg',
+            'img/pictures/RT6050/9.jpg',
+            'img/pictures/RT6050/10.jpg'
+        ]
+    },
+    Robot:{
+        photo:'img/Robot.jpg',
+        title:'Robotic Drilling Cell',
+        images:[
+            'img/pictures/Robot/1.jpg',
+            'img/pictures/Robot/2.jpg',
+            'img/pictures/Robot/3.jpg',
+            'img/pictures/Robot/4.jpg'
+        ]
+    },
+};
 
 
+var sleeping = false;
 
-var i = [
-    'img/pictures/1.jpg',
-    'img/pictures/2.jpg',
-    'img/pictures/3.jpg',
-    'img/pictures/4.jpg',
-    'img/pictures/5.jpg',
-    'img/pictures/6.jpg',
-    'img/pictures/7.jpg'
-];
+var timer = 60000;
+
+var i = [];
 
 var currentImage = 1;
 
@@ -142,4 +214,90 @@ function loadSpecs(){
     }
 
     $('#specs .spec-container').html(html);
+}
+
+function mainNav(){
+    var t = $(this).attr('data-target');
+
+    if(t !== '#videos'){ 
+        $('#video').get(0).pause();
+        $('#video').get(0).currentTime = 0;
+    }
+
+    $('.app').addClass('hidden');
+
+    $(t).removeClass('hidden');
+}
+
+function productNav(){
+        
+    var product = $(this).attr('data-target');
+
+    if(sessionStorage){
+        if(! sessionStorage.productType) sessionStorage.productType = product;
+        $('#sleep-title').text(products[product].title);
+        window.sleep = setTimeout(startSleep,timer);
+    }
+
+    setProductType(product);
+
+    $('.app').addClass('hidden');
+
+    $('#landing-page').removeClass('hidden');
+
+}
+
+function setProductType(product){
+
+    $('#spec-container').html( $('#'+product).html() );
+
+    i = products[product].images;
+
+    currentImage = 0;
+    var leftImage = i.length-1;
+    var rightImage = (i.length > 1)? 1 : 0;
+
+
+    $('.left').css({'background-image':'url('+i[leftImage]+')'});
+    $('.center').css({'background-image':'url('+i[currentImage]+')'});
+    $('.right').css({'background-image':'url('+i[rightImage]+')'});
+
+    $('#landing-image').attr('src',products[product].photo);
+
+    $('#landing-title').text(products[product].title);
+
+    $('.spec-container').html( $('#'+product).html() );
+
+    
+
+}
+
+function sleepCheck(e){
+
+    if(sleeping){
+
+        sleeping = false;
+
+        window.sleep = setTimeout(startSleep,timer);
+        
+        setProductType(sessionStorage.productType);
+
+        $('.app, #sleep').addClass('hidden');
+
+        $('#landing-page').removeClass('hidden');
+    }
+    else{
+        if(window.sleep){
+
+            clearTimeout(window.sleep);
+            
+            window.sleep = setTimeout(startSleep,timer);
+        }
+    }
+}
+
+function startSleep(){
+    sleeping = true;
+
+     $('#sleep').removeClass('hidden');
 }

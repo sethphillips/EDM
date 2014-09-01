@@ -73,6 +73,37 @@ body {
     font-size:14px;
 }
 
+
+#sleep{
+    background:url(../img/bg.png) center;
+    background-size: cover;
+    background-attachment:fixed;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center; 
+    z-index: 20000;
+    color:white;
+}
+
+#sleep-title{
+    position: absolute;
+    top:30%;
+    width:100%;
+    font-size: 5em;
+    font-weight: bold;
+    text-shadow:4px 4px 5px black;
+    padding:1em;
+
+}
+
+#sleep-tagline{
+    position: absolute;
+    bottom:10%;
+    width:100%;
+    font-size: 4em;
+}
 /* Portrait layout (default) */
 .app {  
     position:absolute;            
@@ -113,9 +144,10 @@ body {
 }
 
 .logo-bar{
-    height:10em;
-    background-color:white;
-    padding-top:1.5em;
+    height: 10em;
+    background-color: white;
+    padding-top: 3.5em;
+    margin-bottom: 3em;
 }
 .logo-bar img{
     width:60%;
@@ -127,9 +159,9 @@ body {
 
 .product-button{
     display: inline-block;
-    width:32%;
-    padding:.2em 1em;
-    margin:1em 0;
+    width: 32%;
+    padding: .6em 1em;
+    margin: 4em 0 1em 0;
 
 }
 
@@ -146,23 +178,36 @@ body {
     line-height: 1.3em;
 }
 
+#landing-page{
+    background-color: white;
+}
+#landing-image{
+    width:100%;
+}
+#landing-title{
+    font-size: 3.3em;
+    padding: .5em 1.5em;
+    font-weight: bold;
+}
+
+
 
 .image-container{
     position: relative;
     overflow: hidden;
-    height: 76%
+    height: 90%
 }
 .photo{
    
     background-size: cover;
-    background-position: center;
+    background-position: 0% 0%;
     width:100%;
     height:100%;
     position: absolute;
     top:0;
-    -webkit-transition: left 400ms;
-    -o-transition: left 400ms;
-    transition: left 400ms;
+    -webkit-transition: transform 400ms;
+    -o-transition: transform 400ms;
+    transition: transform 400ms;
 }
 
 #pictures .caption{
@@ -176,23 +221,25 @@ body {
 
 
 .left{
-    left:-100%;
+    
+    -webkit-transform:translate3d(-100%,0,0);
 }
 .center{
-    left:0px;
+    
+    -webkit-transform:translate3d(0,0,0);
 }
 .right{
-    left:100%;
+    -webkit-transform:translate3d(100%,0,0);
 }
 
 #i-1{
-     background-image:url(../img/pictures/1.jpg);
+     /*background-image:url(../img/pictures/1.jpg);*/
 }
 #i-2{
-     background-image:url(../img/pictures/2.jpg);
+     /*background-image:url(../img/pictures/2.jpg);*/
 }   
 #i-3{
-     background-image:url(../img/pictures/3.jpg);
+     /*background-image:url(../img/pictures/3.jpg);*/
      z-index: 2;
 }
 
@@ -230,7 +277,7 @@ body {
     background-color: #fff;
     height:100%;
     overflow: hidden;
-    font-size: 1.6em;
+    font-size: 2em;
 }
 .spec-container{
     height:90%;
@@ -254,7 +301,7 @@ body {
     margin-top:3em;
 }
 .spec-container table{
-    font-size: .7em
+    font-size: .8em
 }
 
 td{
