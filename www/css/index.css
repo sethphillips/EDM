@@ -129,7 +129,7 @@ body {
 #nav-footer .glyphicon{
     font-size: 5em;
     margin-bottom: .2em;
-    color:#616161;
+    
 }
 
 .nav-button{
@@ -137,6 +137,11 @@ body {
     width:24%;
     vertical-align: text-top;
     line-height: 2em;
+    color:#616161;
+}
+
+.nav-button.selected{
+    color:#0069aa;
 }
 
 .nav-button .caption{

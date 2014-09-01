@@ -236,6 +236,10 @@ function loadSpecs(){
 function mainNav(){
     var t = $(this).attr('data-target');
 
+    $(this).addClass('selected');
+    var that= this
+    setTimeout(function(){$(that).removeClass('selected');},300);
+console.log(this);
     if(t !== '#videos'){ 
         $('#video').get(0).pause();
         $('#video').get(0).currentTime = 0;
