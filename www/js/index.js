@@ -26,7 +26,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener(touchEvent, this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
@@ -60,6 +60,9 @@ function deviceReady(){
 
 }
     
+
+
+
 
 var products = {
     CT4003A:{
@@ -147,7 +150,6 @@ var products = {
             'img/pictures/Shared/6.jpg',
             'img/pictures/Shared/7.jpg',
             'img/pictures/Shared/9.jpg'
-        ]
         ]
     },
 };
