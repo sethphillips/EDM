@@ -65,12 +65,12 @@ body {
     background-size: cover;
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    height:100%;
+    height:1024px;
     margin:0;
     padding:0;
-    width:100%;
+    width:768px;
     overflow:hidden;
-    font-size:14px;
+    font-size:12px;
 }
 
 
@@ -166,7 +166,7 @@ body {
     display: inline-block;
     width: 32%;
     padding: .6em 1em;
-    margin: 4em 0 1em 0;
+    margin: 2em 0 1em 0;
 
 }
 
@@ -185,9 +185,10 @@ body {
 
 #landing-page{
     background-color: white;
+    height: 84%;
 }
 #landing-image{
-    width:100%;
+    width:73%;
 }
 #landing-title{
     font-size: 3.3em;
@@ -200,7 +201,7 @@ body {
 .image-container{
     position: relative;
     overflow: hidden;
-    height: 90%
+    height: 84%
 }
 .photo{
    
@@ -254,7 +255,7 @@ body {
 
 .nav-arrow{
     position: absolute;
-    top:40%;
+    top:48%;
     z-index: 10;
     font-size:6em;
     color:black;

@@ -167,7 +167,7 @@ $.each(products, function(k,v){
 
 var sleeping = false;
 
-var timer = 10000;
+var timer = 180000;
 
 var sleepTimer;
 
