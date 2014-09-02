@@ -318,6 +318,7 @@ body {
 td{
     text-align: left;
     padding:0 .6em;
+    vertical-align: top;
 }
 
 ol li{
