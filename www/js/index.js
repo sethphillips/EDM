@@ -58,6 +58,14 @@ function deviceReady(){
 
     $('body').on('touchstart',sleepCheck);
 
+    $('#video').get(0).play();
+    setTimeout(function(){
+
+        $('#video').get(0).pause();
+        $('#video').get(0).currentTime = 0;
+        
+    },500);
+
 }
     
 
@@ -141,7 +149,7 @@ var products = {
         title:'Robotic Drilling Cell',
         images:[
             'img/pictures/Robot/1.jpg',
-            'img/pictures/Robot/2.jpg',
+            'img/pictures/Robot/3.jpg',
 
             'img/pictures/Shared/2.jpg',
             'img/pictures/Shared/3.jpg',
@@ -181,7 +189,6 @@ function pictureSwipe(e){
 
     var dir = (e.type === 'swipeleft')?'left':'right';
 
-    console.log(e.type);
     changePicture(dir);
 }
 
@@ -196,7 +203,6 @@ function pictureNav(){
 function changePicture(dir){
     if(!picChanged){
         picChanged = true;
-        console.log(dir);
         var left = '#' + $('.left').attr('id');
         var center = '#' + $('.center').attr('id');
         var right = '#' + $('.right').attr('id');
