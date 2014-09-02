@@ -211,9 +211,9 @@ body {
     height:100%;
     position: absolute;
     top:0;
-    -webkit-transition: left 800ms;
-    -o-transition: left 800ms;
-    transition: left 800ms;
+    -webkit-transition: left 400ms;
+    -o-transition: left 400ms;
+    transition: left 400ms;
 }
 
 #pictures .caption{

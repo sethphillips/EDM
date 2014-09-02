@@ -180,6 +180,7 @@ function pictureSwipe(e){
 
     var dir = (e.type === 'swipeleft')?'left':'right';
 
+    console.log(e.type);
     changePicture(dir);
 }
 
@@ -192,7 +193,7 @@ function pictureNav(){
 }
 
 function changePicture(dir){
-
+    console.log(dir);
     var left = '#' + $('.left').attr('id');
     var center = '#' + $('.center').attr('id');
     var right = '#' + $('.right').attr('id');
@@ -216,8 +217,8 @@ function changePicture(dir){
     var leftImage = currentImage === 0 ? i.length-1 : currentImage-1;
     var rightImage = currentImage === i.length-1 ? 0 : currentImage+1;
 
-    $('.left').delay(1000).css({'background-image':'url('+i[leftImage]+')'});
-    $('.right').delay(1000).css({'background-image':'url('+i[rightImage]+')'});
+    $('.left').delay(400).css({'background-image':'url('+i[leftImage]+')'});
+    $('.right').delay(400).css({'background-image':'url('+i[rightImage]+')'});
     
 
 }
@@ -239,7 +240,7 @@ function mainNav(){
     $(this).addClass('selected');
     var that= this
     setTimeout(function(){$(that).removeClass('selected');},300);
-console.log(this);
+
     if(t !== '#videos'){ 
         $('#video').get(0).pause();
         $('#video').get(0).currentTime = 0;
@@ -299,7 +300,6 @@ function sleepCheck(e){
 
     if(sleeping){
 
-        console.log('wakeup');
 
         sleeping = false;
 
@@ -314,8 +314,6 @@ function sleepCheck(e){
     else{
         if(sleepTimer){
 
-            console.log('resetSleep');
-
             clearInterval(sleepTimer);
             
             sleepTimer = setInterval(startSleep,timer);
@@ -325,7 +323,6 @@ function sleepCheck(e){
 
 function startSleep(){
        
-    console.log('startSleep');
     
     clearInterval(sleepTimer);
     
