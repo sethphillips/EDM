@@ -175,6 +175,7 @@ var i = [];
 
 var currentImage = 1;
 
+var picChanged = false;
 
 function pictureSwipe(e){
 
@@ -189,37 +190,41 @@ function pictureNav(){
     var dir = $(this).attr('id');
 
     changePicture(dir);
-
+    
 }
 
 function changePicture(dir){
-    console.log(dir);
-    var left = '#' + $('.left').attr('id');
-    var center = '#' + $('.center').attr('id');
-    var right = '#' + $('.right').attr('id');
+    if(!picChanged){
+        picChanged = true;
+        console.log(dir);
+        var left = '#' + $('.left').attr('id');
+        var center = '#' + $('.center').attr('id');
+        var right = '#' + $('.right').attr('id');
 
-    if(dir == 'right'){
-        $(left).css({'z-index':3}).removeClass('left').addClass('center');
-        $(center).css({'z-index':2}).removeClass('center').addClass('right');
-        $(right).css({'z-index':1}).removeClass('right').addClass('left');
-        
-        currentImage = (currentImage === 0)? i.length-1 : currentImage-1;
+        if(dir == 'right'){
+            $(left).css({'z-index':3}).removeClass('left').addClass('center');
+            $(center).css({'z-index':2}).removeClass('center').addClass('right');
+            $(right).css({'z-index':1}).removeClass('right').addClass('left');
+            
+            currentImage = (currentImage === 0)? i.length-1 : currentImage-1;
+        }
+        else if(dir == 'left'){
+            $(left).css({'z-index':1}).removeClass('left').addClass('right');
+            $(center).css({'z-index':2}).removeClass('center').addClass('left');
+            $(right).css({'z-index':3}).removeClass('right').addClass('center');
+            
+            currentImage = (currentImage < i.length-1 )? currentImage+1 : 0;
+            
+        }
+
+        var leftImage = currentImage === 0 ? i.length-1 : currentImage-1;
+        var rightImage = currentImage === i.length-1 ? 0 : currentImage+1;
+
+        $('.left').delay(400).css({'background-image':'url('+i[leftImage]+')'});
+        $('.right').delay(400).css({'background-image':'url('+i[rightImage]+')'});
+
+        setTimeout(function(){picChanged = false;},500); 
     }
-    else if(dir == 'left'){
-        $(left).css({'z-index':1}).removeClass('left').addClass('right');
-        $(center).css({'z-index':2}).removeClass('center').addClass('left');
-        $(right).css({'z-index':3}).removeClass('right').addClass('center');
-        
-        currentImage = (currentImage < i.length-1 )? currentImage+1 : 0;
-        
-    }
-
-    var leftImage = currentImage === 0 ? i.length-1 : currentImage-1;
-    var rightImage = currentImage === i.length-1 ? 0 : currentImage+1;
-
-    $('.left').delay(400).css({'background-image':'url('+i[leftImage]+')'});
-    $('.right').delay(400).css({'background-image':'url('+i[rightImage]+')'});
-    
 
 }
 
