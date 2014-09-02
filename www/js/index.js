@@ -334,10 +334,11 @@ function sleepCheck(e){
 
 function startSleep(){
        
-    
-    clearInterval(sleepTimer);
-    
-    $('#sleep').removeClass('hidden');
+    if($('#videos').hasClass('hidden')){
+        clearInterval(sleepTimer);
+        
+        $('#sleep').removeClass('hidden');
 
-    sleeping = true;
+        sleeping = true;
+    }
 }
