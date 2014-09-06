@@ -134,7 +134,7 @@ body {
 
 .nav-button{
     display:inline-block;
-    width:24%;
+    width:19%;
     vertical-align: text-top;
     line-height: 2em;
     color:#616161;
@@ -284,7 +284,7 @@ body {
 
 
 
-#specs{
+#specs,#ebbco{
     background-color: #fff;
     height:100%;
     overflow: hidden;
@@ -326,7 +326,14 @@ ol li{
     font-size:.9em;
 }
 
+.tech-image{
+    margin-top: 2em;
 
+}
+.tech-image img{
+    border:1px solid black;
+    padding:1em;
+}
 
 
 @media screen and (max-width:600px) {

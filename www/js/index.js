@@ -75,20 +75,16 @@ function deviceReady(){
 var products = {
     CT4003A:{
         photo:'img/CT4003A.jpg',
-        title:'CT400 3A Five Axis CNC EDM Hole Drilling Machine',
+        title:'CT400 3A Three Axis CNC EDM Hole Drilling Machine',
         images:[
-            'img/pictures/CT400/1.jpg',
-            'img/pictures/CT400/3.jpg',
+
             'img/pictures/CT400/4.jpg',
             'img/pictures/CT400/5.jpg',
-            'img/pictures/CT400/6.jpg',
 
-            'img/pictures/Shared/2.jpg',
-            'img/pictures/Shared/3.jpg',
-            'img/pictures/Shared/4.jpg',
-            'img/pictures/Shared/5.jpg',
-            'img/pictures/Shared/6.jpg',
-            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/1.jpg',
+
+            'img/pictures/Shared/1.jpg',
+            
             'img/pictures/Shared/9.jpg'
         ]
     },
@@ -96,17 +92,14 @@ var products = {
         photo:'img/CT4005A.jpg',
         title:'CT400 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
-            'img/pictures/CT400/1.jpg',
             'img/pictures/CT400/3.jpg',
-            'img/pictures/CT400/4.jpg',
-            'img/pictures/CT400/5.jpg',
+
+
             'img/pictures/CT400/6.jpg',
 
+            'img/pictures/Shared/1.jpg',
             'img/pictures/Shared/2.jpg',
             'img/pictures/Shared/3.jpg',
-            'img/pictures/Shared/4.jpg',
-            'img/pictures/Shared/5.jpg',
-            'img/pictures/Shared/6.jpg',
             'img/pictures/Shared/7.jpg',
             'img/pictures/Shared/9.jpg'
         ]
@@ -115,16 +108,18 @@ var products = {
         photo:'img/CT5005A.jpg',
         title:'CT500 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
+            'img/pictures/CT500/5.jpg',
             'img/pictures/CT500/1.jpg',
             'img/pictures/CT500/2.jpg',
             'img/pictures/CT500/4.jpg',
-            'img/pictures/CT500/5.jpg',
+            'img/pictures/CT500/6.jpg',
+            'img/pictures/CT500/7.jpg',
+            'img/pictures/CT500/8.jpg',
 
             'img/pictures/Shared/2.jpg',
             'img/pictures/Shared/3.jpg',
-            'img/pictures/Shared/4.jpg',
-            'img/pictures/Shared/5.jpg',
-            'img/pictures/Shared/6.jpg',
+            'img/pictures/Shared/1.jpg',
+
             'img/pictures/Shared/7.jpg',
             'img/pictures/Shared/9.jpg'
         ]
@@ -133,14 +128,13 @@ var products = {
         photo:'img/RT60505A.jpg',
         title:'RT6050 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
+            'img/pictures/RT6050/4.jpg',
+            'img/pictures/RT6050/1.jpg',
+            'img/pictures/RT6050/2.jpg',
+            'img/pictures/RT6050/3.jpg',
             'img/pictures/RT6050/10.jpg',
 
-            'img/pictures/Shared/2.jpg',
-            'img/pictures/Shared/3.jpg',
-            'img/pictures/Shared/4.jpg',
-            'img/pictures/Shared/5.jpg',
-            'img/pictures/Shared/6.jpg',
-            'img/pictures/Shared/7.jpg',
+            'img/pictures/Shared/1.jpg',
             'img/pictures/Shared/9.jpg'
         ]
     },
@@ -150,14 +144,7 @@ var products = {
         images:[
             'img/pictures/Robot/1.jpg',
             'img/pictures/Robot/3.jpg',
-
-            'img/pictures/Shared/2.jpg',
-            'img/pictures/Shared/3.jpg',
-            'img/pictures/Shared/4.jpg',
-            'img/pictures/Shared/5.jpg',
-            'img/pictures/Shared/6.jpg',
-            'img/pictures/Shared/7.jpg',
-            'img/pictures/Shared/9.jpg'
+            'img/pictures/Robot/2.jpg',
         ]
     },
 };
@@ -236,14 +223,7 @@ function changePicture(dir){
 
 
 
-function loadSpecs(){
-    var html = '';
-    for(var i = 0;i<50;i++){
-        html += 'Test Line <br> Scroll Test <br>';
-    }
 
-    $('#specs .spec-container').html(html);
-}
 
 function mainNav(){
     var t = $(this).attr('data-target');
@@ -260,6 +240,10 @@ function mainNav(){
     $('.app').addClass('hidden');
 
     $(t).removeClass('hidden');
+
+    if(t === '#specs' || t === '#ebbco'){
+        $('.spec-container').scrollTop(0);
+    }
 }
 
 function productNav(){
@@ -284,7 +268,8 @@ function productNav(){
 
 function setProductType(product){
 
-    $('#spec-container').html( $('#'+product).html() );
+
+    
 
     i = products[product].images;
 
@@ -301,7 +286,7 @@ function setProductType(product){
 
     $('#landing-title').text(products[product].title);
 
-    $('.spec-container').html( $('#'+product).html() );
+    $('#specs .spec-container').html( $('#'+product).html() );
 
     
 
