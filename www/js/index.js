@@ -83,7 +83,7 @@ var products = {
 
             'img/pictures/Shared/1.jpg',
 
-            'img/pictures/Shared/1.jpg',
+            
             
             'img/pictures/Shared/9.jpg'
         ]
