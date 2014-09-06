@@ -128,10 +128,10 @@ var products = {
         photo:'img/RT60505A.jpg',
         title:'RT6050 5A Five Axis CNC EDM Hole Drilling Machine',
         images:[
-            'img/pictures/RT6050/4.jpg',
-            'img/pictures/RT6050/1.jpg',
-            'img/pictures/RT6050/2.jpg',
-            'img/pictures/RT6050/3.jpg',
+            'img/pictures/RT6050/4.JPG',
+            'img/pictures/RT6050/1.JPG',
+            'img/pictures/RT6050/2.JPG',
+            'img/pictures/RT6050/3.JPG',
             'img/pictures/RT6050/10.jpg',
             'img/pictures/Shared/1.jpg',
             'img/pictures/Shared/9.jpg'
@@ -143,7 +143,7 @@ var products = {
         images:[
             'img/pictures/Robot/1.jpg',
             'img/pictures/Robot/3.jpg',
-            'img/pictures/Robot/2.jpg',
+            'img/pictures/Robot/2.JPG',
         ]
     },
 };
