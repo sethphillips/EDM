@@ -133,7 +133,6 @@ var products = {
             'img/pictures/RT6050/2.jpg',
             'img/pictures/RT6050/3.jpg',
             'img/pictures/RT6050/10.jpg',
-
             'img/pictures/Shared/1.jpg',
             'img/pictures/Shared/9.jpg'
         ]
@@ -158,6 +157,8 @@ $.each(products, function(k,v){
         x++;
     });
 });
+
+
 
 
 var sleeping = false;
