@@ -42,21 +42,21 @@ var app = {
 };
 
 $(document).ready(function(){
-    deviceReady();
+    
 });
 
-function deviceReady(){
+$(document).ready(function(){
     $('.nav-arrow').on('touchstart',pictureNav);
 
     Hammer(document.getElementById('i-1')).on('swiperight swipeleft',pictureSwipe);
     Hammer(document.getElementById('i-2')).on('swiperight swipeleft',pictureSwipe);
     Hammer(document.getElementById('i-3')).on('swiperight swipeleft',pictureSwipe);
 
-    $('.nav-button').on('touchstart',mainNav);
+    $('.nav-button').on('touchstart click',mainNav);
 
-    $('.product-button').on('touchstart',productNav);
+    $('.product-button').on('touchstart click',productNav);
 
-    $('body').on('touchstart',sleepCheck);
+    $('body').on('touchstart click',sleepCheck);
 
     $('#video').get(0).play();
     setTimeout(function(){
@@ -66,7 +66,7 @@ function deviceReady(){
         
     },500);
 
-}
+});
     
 
 
